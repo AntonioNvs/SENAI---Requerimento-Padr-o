@@ -6,8 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using SENAI___Requerimento_padrão.CODE.BLL;
 using SENAI___Requerimento_padrão.CODE.DTO;
 
 namespace SENAI___Requerimento_padrão

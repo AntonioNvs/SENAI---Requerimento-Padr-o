@@ -20,6 +20,7 @@ namespace SENAI___Requerimento_padrão
         List<CategoriaClienteDTO> listaCategorias = new List<CategoriaClienteDTO>();
 
         public Inicio()
+
         {
             InitializeComponent();
         }
@@ -62,7 +63,7 @@ namespace SENAI___Requerimento_padrão
             att.HeaderText = "Editar";
             att.Name = "editar";
 
-            att.ce = Image.FromFile("C:\\Users\\tonim\\Desktop\\SENAI - Requerimento Padrão\\icone-salvar.png");
+            // att.ce = Image.FromFile("C:\\Users\\tonim\\Desktop\\SENAI - Requerimento Padrão\\icone-salvar.png");
             gridClientes.Columns.Add(exc);
             gridClientes.Columns.Add(att);
             gridClientes.Columns["editar"].DisplayIndex = 0;

@@ -1,0 +1,35 @@
+[33mcommit 5531a1b1665493aa6315824c25f8f23840710b1e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Antônio Caetano Neves Neto <tonim2612@gmail.com>
+Date:   Tue Mar 16 14:05:47 2021 -0300
+
+    Update README
+
+[33mcommit 6190f99f73c3f82f8298311296f97a66dc650f04[m
+Author: AntonioNvs <tonim2612@gmail.com>
+Date:   Tue Mar 16 13:56:13 2021 -0300
+
+    Comment
+
+[33mcommit 91a9c5e39c32e0aaead648bdec016c2c3cb05a6b[m
+Author: Gabriel Oliveira <gabriel9938@gmail.com>
+Date:   Tue Mar 16 13:49:47 2021 -0300
+
+    feat(README):Criando readme
+
+[33mcommit 5ba9830ceb9fc4c2de83f450effe10b191f59523[m
+Author: Gabriel Oliveira <gabriel9938@gmail.com>
+Date:   Tue Mar 16 13:46:18 2021 -0300
+
+    commit teste
+
+[33mcommit 8d8850f9c0144f290dbadbde2e428d061ecb09f3[m
+Author: AntonioNvs <tonim2612@gmail.com>
+Date:   Tue Mar 16 13:39:42 2021 -0300
+
+    Adicionar arquivos de projeto.
+
+[33mcommit 6065586dfd0a405e2854edc022f52f8e37cec0b9[m
+Author: AntonioNvs <tonim2612@gmail.com>
+Date:   Tue Mar 16 13:39:40 2021 -0300
+
+    Adicionar .gitignore e .gitattributes.

@@ -10,8 +10,10 @@ namespace SENAI___Requerimento_padrão.CODE.BLL
     {
         AcessoBancoDados bd;
 
-		// Gabriel é otario;
-		// jsdodijkd
+		// Hei!
+
+
+
 		public void Inserir(ClienteDTO dto)
 		{
 			try

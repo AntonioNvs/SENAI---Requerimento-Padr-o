@@ -31,7 +31,7 @@ namespace SENAI___Requerimento_padrão
 
             carregarSelecaoDeCategoria();
 
-            personalizarGrid();
+            //personalizarGrid();
         }
 
         public void carregarSelecaoDeCategoria()

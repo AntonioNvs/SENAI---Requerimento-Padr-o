@@ -12,6 +12,7 @@ namespace SENAI___Requerimento_padrão.CODE.BLL
 
 		// Gabriel é otario;
 		// jsdodijkd
+		// Teste Lucas
 		public void Inserir(ClienteDTO dto)
 		{
 			try

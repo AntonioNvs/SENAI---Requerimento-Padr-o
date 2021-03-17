@@ -93,10 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CODE\Modulos\Clientes\BLL\CategoriaClienteBLL.cs" />
+    <Compile Include="CODE\Modulos\Clientes\BLL\EnderecoBLL.cs" />
     <Compile Include="CODE\Modulos\Clientes\BLL\TelefoneBLL.cs" />
     <Compile Include="CODE\Modulos\Clientes\BLL\ClienteBLL.cs" />
     <Compile Include="CODE\Infra\DAL\AcessoBancoDados.cs" />
     <Compile Include="CODE\Modulos\Clientes\DTO\CategoriaClienteDTO.cs" />
+    <Compile Include="CODE\Modulos\Clientes\DTO\EnderecoDTO.cs" />
     <Compile Include="CODE\Modulos\Clientes\DTO\TelefoneDTO.cs" />
     <Compile Include="CODE\Modulos\Clientes\DTO\ClienteDTO.cs" />
     <Compile Include="Inicio.cs">

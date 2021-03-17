@@ -1,25 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Windows.Forms;
+
 using SENAI___Requerimento_padrão.CODE.Modulos.Clientes.DTO;
 using SENAI___Requerimento_padrão.CODE.Infra.DAL;
-using System.Windows.Forms;
-using System.Data;
 
 namespace SENAI___Requerimento_padrão.CODE.Modulos.Clientes.BLL
 {
-    class TelefoneBLL
+    class EnderecoBLL
     {
         AcessoBancoDados bd;
-
-        public void Inserir(TelefoneDTO dto)
+        public void Inserir(EnderecoDTO dto)
         {
             try
             {
                 bd = new AcessoBancoDados();
                 bd.Conectar();
 
-                string comando = "INSERT INTO TELEFONE(id_cliente, numero_telefone, whatsapp, categoria_telefone) " +
-                    "values ('" + dto.IdCliente + "', '" + dto.NumeroTelefone+ "', '" + dto.Whatsapp+ "', " +
-                    "'" + dto.CategoriaTelefone + "')";
+                string comando = "INSERT INTO ENDERECO(id_cliente, logradouro, numero, cep, bairro, complemento, cidade, uf, categoria_endereco) " +
+                    "values ('" + dto.IdCliente + "', '" + dto.Logradouro + "', '" + dto.Numero + "', " +
+                    "'" + dto.Cep + "', '" + dto.Bairro + "', '" + dto.Complemento + "', '" + dto.Cidade + "', '" + dto.Uf + "', '" + dto.CategoriaEndereco + "')";
 
                 bd.ExecutarComandoSQL(comando);
 
@@ -34,16 +38,16 @@ namespace SENAI___Requerimento_padrão.CODE.Modulos.Clientes.BLL
             }
         }
 
-        public void Excluir(TelefoneDTO dto)
+        public void Excluir(EnderecoDTO dto)
         {
             bd = new AcessoBancoDados();
             bd.Conectar();
-            string comando = "DELETE FROM TELEFONE " +
-                "where id_telefone = '" + dto.IdTelefone + "'";
+            string comando = "DELETE FROM ENDERECO " +
+                "where id_endereco = '" + dto.IdEndereco + "'";
             bd.ExecutarComandoSQL(comando);
         }
 
-        public DataTable SelecionaTodosTelefones()
+        public DataTable SelecionaTodasCategorias()
         {
             DataTable dt = new DataTable();
 
@@ -51,7 +55,7 @@ namespace SENAI___Requerimento_padrão.CODE.Modulos.Clientes.BLL
             {
                 bd = new AcessoBancoDados();
                 bd.Conectar();
-                dt = bd.RetDataTable("Select * from TELEFONE");
+                dt = bd.RetDataTable("Select * from ENDERECO");
             }
             catch (Exception ex)
             {

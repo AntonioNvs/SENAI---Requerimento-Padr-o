@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SENAI___Requerimento_padrão.CODE.BLL;
-using SENAI___Requerimento_padrão.CODE.DTO;
+using SENAI___Requerimento_padrão.CODE.Modulos.Clientes.DTO;
+using SENAI___Requerimento_padrão.CODE.Modulos.Clientes.BLL;
 
 namespace SENAI___Requerimento_padrão
 {

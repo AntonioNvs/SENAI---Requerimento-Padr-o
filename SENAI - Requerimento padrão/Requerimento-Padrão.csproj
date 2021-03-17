@@ -92,11 +92,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CODE\BLL\CategoriaClienteBLL.cs" />
-    <Compile Include="CODE\BLL\ClienteBLL.cs" />
-    <Compile Include="CODE\DAL\AcessoBancoDados.cs" />
-    <Compile Include="CODE\DTO\CategoriaClienteDTO.cs" />
-    <Compile Include="CODE\DTO\ClienteDTO.cs" />
+    <Compile Include="CODE\Modulos\Clientes\BLL\CategoriaClienteBLL.cs" />
+    <Compile Include="CODE\Modulos\Clientes\BLL\TelefoneBLL.cs" />
+    <Compile Include="CODE\Modulos\Clientes\BLL\ClienteBLL.cs" />
+    <Compile Include="CODE\Infra\DAL\AcessoBancoDados.cs" />
+    <Compile Include="CODE\Modulos\Clientes\DTO\CategoriaClienteDTO.cs" />
+    <Compile Include="CODE\Modulos\Clientes\DTO\TelefoneDTO.cs" />
+    <Compile Include="CODE\Modulos\Clientes\DTO\ClienteDTO.cs" />
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +142,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="CODE\Modulos\Requerimentos\BLL\" />
+    <Folder Include="CODE\Modulos\Requerimentos\DTO\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

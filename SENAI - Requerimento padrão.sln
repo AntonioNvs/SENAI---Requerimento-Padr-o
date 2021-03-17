@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SENAI - Requerimento padrão", "SENAI - Requerimento padrão\SENAI - Requerimento padrão.csproj", "{3283A230-1C0A-43E8-9884-AA53EF7EC966}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Requerimento-Padrão", "SENAI - Requerimento padrão\Requerimento-Padrão.csproj", "{3283A230-1C0A-43E8-9884-AA53EF7EC966}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

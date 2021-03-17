@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using SENAI___Requerimento_padrão.CODE.DTO;
-using SENAI___Requerimento_padrão.CODE.DAL;
+using SENAI___Requerimento_padrão.CODE.Modulos.Clientes.DTO;
+using SENAI___Requerimento_padrão.CODE.Infra.DAL;
 
-namespace SENAI___Requerimento_padrão.CODE.BLL
+namespace SENAI___Requerimento_padrão.CODE.Modulos.Clientes.BLL
 {
-    class ClienteBLL
+	class ClienteBLL
     {
         AcessoBancoDados bd;
 

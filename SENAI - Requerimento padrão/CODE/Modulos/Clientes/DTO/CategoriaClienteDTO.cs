@@ -1,4 +1,4 @@
-﻿namespace SENAI___Requerimento_padrão.CODE.DTO
+﻿namespace SENAI___Requerimento_padrão.CODE.Modulos.Clientes.DTO
 {
     class CategoriaClienteDTO
     {

@@ -3,7 +3,7 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
-namespace SENAI___Requerimento_padrão.CODE.DAL
+namespace SENAI___Requerimento_padrão.CODE.Infra.DAL
 {
     class AcessoBancoDados
     {

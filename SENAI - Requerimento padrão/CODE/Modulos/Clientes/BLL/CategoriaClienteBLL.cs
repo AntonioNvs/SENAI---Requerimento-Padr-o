@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SENAI___Requerimento_padrão.CODE.DTO;
-using SENAI___Requerimento_padrão.CODE.DAL;
 using System.Windows.Forms;
 using System.Data;
+using SENAI___Requerimento_padrão.CODE.Modulos.Clientes.DTO;
+using SENAI___Requerimento_padrão.CODE.Infra.DAL;
 
-namespace SENAI___Requerimento_padrão.CODE.BLL
+namespace SENAI___Requerimento_padrão.CODE.Modulos.Clientes.BLL
 {
     class CategoriaClienteBLL
     {

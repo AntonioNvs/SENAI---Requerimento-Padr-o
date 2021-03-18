@@ -10,20 +10,41 @@ namespace SENAI___Requerimento_padrão.CODE.Modulos.Clientes.BLL
     {
         AcessoBancoDados bd;
 
-        public void Inserir(CategoriaClienteDTO dto)
+        public void Inserir(CategoriaClienteDTO categoriaClienteDTO)
         {
             try
             {
                 bd = new AcessoBancoDados();
                 bd.Conectar();
+                   
+                // Verificando se o campo está preenchido
+                if(categoriaClienteDTO.CategoriaCliente == "")
+                {
+                    MessageBox.Show("O campo não foi preenchido!");
+                    return;
+                }
 
-                string comando = "INSERT INTO CATEGORIA_CLIENTE(categoria_cliente) " +
-                    "values ('" + dto.CategoriaCliente + "')";
+                // Retirando os espaços e transformando em minúscula, para comparações futuras
+                categoriaClienteDTO.CategoriaCliente = categoriaClienteDTO.CategoriaCliente.Trim().ToLower();
 
-                bd.ExecutarComandoSQL(comando);
+                int jaExisteUmaCategoria = this.SelecionarComCondicao("categoria_cliente = '" + categoriaClienteDTO.CategoriaCliente + "'").Rows.Count;
+
+                // Comparando se já existe uma categoria
+                if(jaExisteUmaCategoria == 0)
+                {
+                    string comando = "INSERT INTO CATEGORIA_CLIENTE(categoria_cliente) " +
+                    "values ('" + categoriaClienteDTO.CategoriaCliente + "')";
+
+                    bd.ExecutarComandoSQL(comando);
+                }
+                else
+                {
+                    MessageBox.Show("Já existe a categoria com o mesmo nome");
+                }
                 
-            } catch (Exception ex){
-                MessageBox.Show("Erro ao tentar inserir: " + ex);
+                
+            } catch (Exception excecao){
+                MessageBox.Show("Erro ao tentar inserir: " + excecao);
             }
             finally
             {
@@ -31,61 +52,106 @@ namespace SENAI___Requerimento_padrão.CODE.Modulos.Clientes.BLL
             }
         }
 
-        public void Excluir(CategoriaClienteDTO dto)
+        public void Excluir(CategoriaClienteDTO categoriaClienteDTO)
         {
-            bd = new AcessoBancoDados();
-            bd.Conectar();
-            string comando = "DELETE FROM CATEGORIA_CLIENTE " +
-                "where id_categoria_cliente = '" + dto.IdCategoriaCliente +"'";
-            bd.ExecutarComandoSQL(comando);
+            try
+            {
+                bd = new AcessoBancoDados();
+                bd.Conectar();
+                string comando = "DELETE FROM CATEGORIA_CLIENTE where id_categoria_cliente = '" + categoriaClienteDTO.IdCategoriaCliente + "'";
+                bd.ExecutarComandoSQL(comando);
+            } catch (Exception excecao)
+            {
+                MessageBox.Show("Erro ao tentar Excluir: " + excecao.ToString());
+            } finally
+            {
+                bd = null;
+            }
+            
         }
 
-        public void Alterar(CategoriaClienteDTO dto)
+        public void Alterar(CategoriaClienteDTO categoriaClienteDTO)
         {
-            bd = new AcessoBancoDados();
-            bd.Conectar();
+            try
+            {
+                bd = new AcessoBancoDados();
+                bd.Conectar();
 
-            string comando = "UPDATE CATEGORIA_CLIENTE set " +
-                "categoria_cliente = '" + dto.CategoriaCliente + "'" +
-                "where id_categoria_cliente = '" + dto.CategoriaCliente + "'";
+                // Verificando se o campo está preenchido
+                if (categoriaClienteDTO.CategoriaCliente == "")
+                {
+                    MessageBox.Show("O campo não foi preenchido!");
+                    return;
+                }
 
-            bd.ExecutarComandoSQL(comando);
+                // Retirando os espaços e transformando em minúscula, para comparações futuras
+                categoriaClienteDTO.CategoriaCliente = categoriaClienteDTO.CategoriaCliente.Trim().ToLower();
+
+                int jaExisteUmaCategoria = this.SelecionarComCondicao("categoria_cliente = '" + categoriaClienteDTO.CategoriaCliente + "'").Rows.Count;
+
+                // Comparando se já existe uma categoria
+                if (jaExisteUmaCategoria == 0)
+                {
+                    string comando = "UPDATE CATEGORIA_CLIENTE set " +
+                       "categoria_cliente = '" + categoriaClienteDTO.CategoriaCliente + "'" +
+                       "where id_categoria_cliente = '" + categoriaClienteDTO.CategoriaCliente + "'";
+
+                    bd.ExecutarComandoSQL(comando);
+                }
+                else
+                {
+                    MessageBox.Show("Já existe a categoria com o mesmo nome");
+                }
+            }
+            catch (Exception excecao)
+            {
+                MessageBox.Show("Erro ao alterar: " + excecao.ToString());
+            }
+            finally
+            {
+                bd = null;
+            }
+            
         }
 
         public DataTable SelecionarTodos()
         {
-            DataTable dt = new DataTable();
+            DataTable dataTable = new DataTable();
 
             try
             {
                 bd = new AcessoBancoDados();
                 bd.Conectar();
-                dt = bd.RetDataTable("Select * from CATEGORIA_CLIENTE");
+                dataTable = bd.RetDataTable("Select * from CATEGORIA_CLIENTE");
             }
-            catch (Exception ex)
+            catch (Exception excecao)
             {
-                MessageBox.Show("Erro ao tentar Selecionar todos os clientes: " + ex);
+                MessageBox.Show("Erro ao tentar Selecionar todos os clientes: " + excecao);
+            }
+            finally
+            {
+                bd = null;
             }
 
-            return dt;
+            return dataTable;
         }
 
         public DataTable SelecionarComCondicao(string condicao)
         {
-            DataTable dt = new DataTable();
+            DataTable dataTable = new DataTable();
 
             try
             {
                 bd = new AcessoBancoDados();
                 bd.Conectar();
-                dt = bd.RetDataTable("Select * from CATEGORA_CLIENTE where " + condicao);
+                dataTable = bd.RetDataTable("Select * from CATEGORIA_CLIENTE where " + condicao);
             }
-            catch (Exception ex)
+            catch (Exception excecao)
             {
-                MessageBox.Show("Erro: " + ex.ToString());
+                MessageBox.Show("Erro ao listar com condição: " + excecao.ToString());
             }
 
-            return dt;
+            return dataTable;
         }
     }
 }

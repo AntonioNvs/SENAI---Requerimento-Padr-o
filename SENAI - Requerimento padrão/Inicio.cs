@@ -30,13 +30,12 @@ namespace SENAI___Requerimento_padrão
             carregarGrid();
 
             carregarSelecaoDeCategoria();
-
             //personalizarGrid();
         }
 
         public void carregarSelecaoDeCategoria()
         {
-            DataTable dt = bllCategoria.SelecionaTodasCategorias();
+            DataTable dt = bllCategoria.SelecionarTodos();
             listaCategorias.Clear();
             boxCategoria.Items.Clear();
 
@@ -85,13 +84,6 @@ namespace SENAI___Requerimento_padrão
             dto.Email = txtEmail.Text;
             dto.Situacao = "Ativo";
 
-            if (dto.Url == "" || dto.NomeCompleto == "" || dto.Matricula == "" ||
-                dto.Cpf == "" || dto.Rg == "" || dto.OrgaoEmissor == "" || 
-                dto.Email == "" || dto.Situacao == "" || dto.IdCategoria == null)
-            {
-                MessageBox.Show("Falta campos a serem preenchidos");
-            }
-
             bll.Inserir(dto);
             limpar();
             carregarGrid();
@@ -110,7 +102,7 @@ namespace SENAI___Requerimento_padrão
 
         private void carregarGrid()
         {
-            gridClientes.DataSource = bll.SelecionaTodosClientes();
+            gridClientes.DataSource = bll.SelecionarTodos();
         }
 
         private void carregarTelaNovaCategoria(object sender, EventArgs e)

@@ -31,7 +31,7 @@ namespace SENAI___Requerimento_padrão
 
         private void carregarGrid()
         {
-            gridCategorias.DataSource = bll.SelecionaTodasCategorias();
+            gridCategorias.DataSource = bll.SelecionarTodos();
         }
 
         private void InserirCategoria(object sender, EventArgs e)

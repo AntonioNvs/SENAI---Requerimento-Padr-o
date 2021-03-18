@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
 using SENAI___Requerimento_padrão.CODE.Modulos.Clientes.DTO;
@@ -44,7 +40,19 @@ namespace SENAI___Requerimento_padrão.CODE.Modulos.Clientes.BLL
             bd.ExecutarComandoSQL(comando);
         }
 
-        public DataTable SelecionaTodasCategorias()
+        public void Alterar(CategoriaClienteDTO dto)
+        {
+            bd = new AcessoBancoDados();
+            bd.Conectar();
+
+            string comando = "UPDATE CATEGORIA_CLIENTE set " +
+                "categoria_cliente = '" + dto.CategoriaCliente + "'" +
+                "where id_categoria_cliente = '" + dto.CategoriaCliente + "'";
+
+            bd.ExecutarComandoSQL(comando);
+        }
+
+        public DataTable SelecionarTodos()
         {
             DataTable dt = new DataTable();
 
@@ -57,6 +65,24 @@ namespace SENAI___Requerimento_padrão.CODE.Modulos.Clientes.BLL
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao tentar Selecionar todos os clientes: " + ex);
+            }
+
+            return dt;
+        }
+
+        public DataTable SelecionarComCondicao(string condicao)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                bd = new AcessoBancoDados();
+                bd.Conectar();
+                dt = bd.RetDataTable("Select * from CATEGORA_CLIENTE where " + condicao);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.ToString());
             }
 
             return dt;

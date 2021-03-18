@@ -66,9 +66,9 @@ namespace SENAI___Requerimento_padrão.CODE.Modulos.Clientes.BLL
 
 			bd.ExecutarComandoSQL(comando);
 		}
-
+		
 		//using System.Data
-		public DataTable SelecionaTodosClientes()
+		public DataTable SelecionarTodos()
 		{
 			DataTable dt = new DataTable();
 

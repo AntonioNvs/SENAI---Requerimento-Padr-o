@@ -43,7 +43,7 @@ namespace SENAI___Requerimento_padrão.CODE.Modulos.Clientes.BLL
             bd.ExecutarComandoSQL(comando);
         }
 
-        public DataTable SelecionaTodosTelefones()
+        public DataTable SelecionarTodos()
         {
             DataTable dt = new DataTable();
 

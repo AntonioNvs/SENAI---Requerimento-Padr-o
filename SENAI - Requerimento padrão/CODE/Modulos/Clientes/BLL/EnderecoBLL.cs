@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Windows.Forms;
 
@@ -47,7 +43,7 @@ namespace SENAI___Requerimento_padrão.CODE.Modulos.Clientes.BLL
             bd.ExecutarComandoSQL(comando);
         }
 
-        public DataTable SelecionaTodasCategorias()
+        public DataTable SelecionarTodos()
         {
             DataTable dt = new DataTable();
 
